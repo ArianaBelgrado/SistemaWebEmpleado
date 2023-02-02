@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/css/site.css" /> 
+</head>
+<body>
+    <header>
+        <h1>SISTEMA EMPLEADOS</h1>
+    </header>
+
+    <aside>
+        @RenderSection("Aside")
+    </aside>
+
+    <nav>
+        @Html.ActionLink("Home", "Index", "Home")
+        @Html.ActionLink("Empleado", "Index", "Empleado")
+    </nav>
+
+    <main>
+        <div>
+            @RenderBody()
+        </div>
+    </main>
+
+    <footer>
+        <label>Info@Empleado.com</label>
+    </footer>
+</body>
+</html>

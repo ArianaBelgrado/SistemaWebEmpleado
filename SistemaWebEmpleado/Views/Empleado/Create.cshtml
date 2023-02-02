@@ -1,0 +1,66 @@
+﻿@model SistemaWebEmpleado.Models.Empleado
+
+@section Aside{
+    <div class="vista">
+        <h1>Administacion de Empleados</h1>
+        <h2>Agregar Empleado</h2>
+    </div>
+}
+
+@{
+   ViewData["Title"] = "Crear Empleado";
+}
+
+@using (Html.BeginForm("Create", "Empleado", FormMethod.Post))
+{
+
+    <div>
+
+        @Html.LabelFor(model => model.Nombre)
+        @Html.TextBoxFor(model => model.Nombre)
+        @Html.ValidationMessageFor(model => model.Nombre)
+
+    </div>
+    <div>
+
+        @Html.LabelFor(model => model.Apellido)
+        @Html.TextBoxFor(model => model.Apellido)
+        @Html.ValidationMessageFor(model => model.Apellido)
+
+    </div>
+    <div>
+
+        @Html.LabelFor(model => model.DNI)
+        @Html.TextBoxFor(model => model.DNI)
+        @Html.ValidationMessageFor(model => model.DNI)
+
+    </div>
+    <div>
+
+        @Html.LabelFor(model => model.Legajo)
+        @Html.TextBoxFor(model => model.Legajo)
+        @Html.ValidationMessageFor(model => model.Legajo)
+
+    </div>
+    <div>
+
+        @Html.LabelFor(model => model.FechaNacimiento)
+        @Html.TextBoxFor(model => model.FechaNacimiento)
+        @Html.ValidationMessageFor(model => model.FechaNacimiento)
+
+    </div>
+    <div>
+
+        @Html.LabelFor(model => model.Titulo)
+        @Html.TextBoxFor(model => model.Titulo)
+        @Html.ValidationMessageFor(model => model.Titulo)
+
+    </div>
+
+
+
+    <input type="submit" value="Create" action="Create" />
+
+    @Html.ActionLink("Home", "Index", "Empleado")
+
+}

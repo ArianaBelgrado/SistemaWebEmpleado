@@ -1,0 +1,56 @@
+﻿@model IEnumerable<SistemaWebEmpleado.Models.Empleado> 
+
+@section Aside {
+	<div class="vista">
+        <h2>¡Bienvendio!</h2>
+    </div>
+}
+
+
+@{
+	ViewData["Title"] = "Inicio de Empleado";
+}
+
+@Html.ActionLink("Crear Empleado ","Create","Empleado")
+
+<table>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Titulo)</th>
+        <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+        <th>@Html.DisplayNameFor(model => model.Apellido)</th>
+        <th>@Html.DisplayNameFor(model => model.DNI)</th>
+        <th>@Html.DisplayNameFor(model => model.Legajo)</th>
+        <th>@Html.DisplayNameFor(model => model.FechaNacimiento)</th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.Titulo,"Details", "Empleado", new{id = item.Id})
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DNI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Legajo)
+            </td>
+            <td>
+                @Html.DisplayFor(empleado => item.FechaNacimiento, "{0:dd/mm/yyyy}")
+            </td>
+
+            <td>
+                @Html.ActionLink("Detalle","Details", "empleado", new{id=item.Id})
+            <td />
+        </tr>
+    }
+
+</table>
+
